@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Task List</title>
+</head>
+<body>
+    <h1>Tasks</h1>
+    <a href="/tasks/new">Create New Task</a>
+    <table border="1">
+        <tr>
+            <th>Title</th><th>Status</th><th>Due Date</th>
+        </tr>
+        <tr th:each="task : ${tasks}">
+            <td th:text="${task.title}">Sample Task</td>
+            <td th:text="${task.status}">PENDING</td>
+            <td th:text="${task.dueDate}">2025-07-05</td>
+        </tr>
+    </table>
+</body>
+</html>
