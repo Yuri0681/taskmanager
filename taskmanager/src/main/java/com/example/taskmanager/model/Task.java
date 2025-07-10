@@ -1,9 +1,14 @@
 package com.example.taskmanager.model;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
+
 import java.time.LocalDate;
 
 @Entity
+@Getter
+@Setter
 public class Task {
 
     @Id
@@ -30,5 +35,5 @@ public class Task {
         LOW, MEDIUM, HIGH
     }
 
-    // Getters and Setters omitted for brevity
+
 }

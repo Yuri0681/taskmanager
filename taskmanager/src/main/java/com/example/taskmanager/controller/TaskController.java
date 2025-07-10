@@ -34,5 +34,26 @@ public class TaskController {
         return "redirect:/tasks";
     }
 
-    // 編集、削除のメソッドも同様に実装可能
+    @GetMapping("/{id}/edit")
+    public String showEditForm(@PathVariable Long id, Model model) {
+        Task task = service.findById(id)
+            .orElseThrow(() -> new IllegalArgumentException("Invalid task ID: " + id));
+        model.addAttribute("task", task);
+        return "taskedit_form";
+    }
+
+
+    @PostMapping("/{id}/edit")
+    public String updateTask(@PathVariable Long id, @ModelAttribute Task task) {
+        task.setId(id); 
+        service.save(task);
+        return "redirect:/tasks";
+    }
+
+    @GetMapping("/{id}/delete")
+    public String deleteTask(@PathVariable Long id) {
+        service.deleteById(id);
+        return "redirect:/tasks";
+    }
+
 }

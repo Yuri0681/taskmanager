@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Edit Task</title>
+</head>
+<body>
+<h1>Edit Task</h1>
+<form th:action="@{'/tasks/' + ${task.id} + '/edit'}" th:object="${task}" method="post">
+    <input type="hidden" th:field="*{id}" />
+    <label>Title:</label>
+    <input type="text" th:field="*{title}" /><br/>
+
+    <label>Description:</label>
+    <textarea th:field="*{description}"></textarea><br/>
+
+    <label>Due Date:</label>
+    <input type="date" th:field="*{dueDate}" /><br/>
+
+    <label>Status:</label>
+    <select th:field="*{status}">
+        <option th:value="PENDING">Pending</option>
+        <option th:value="IN_PROGRESS">In Progress</option>
+        <option th:value="COMPLETED">Completed</option>
+    </select><br/>
+
+    <label>Priority:</label>
+    <select th:field="*{priority}">
+        <option th:value="LOW">Low</option>
+        <option th:value="MEDIUM">Medium</option>
+        <option th:value="HIGH">High</option>
+    </select><br/>
+
+    <button type="submit">Save</button>
+</form>
+
+<a th:href="@{/tasks}">Back to List</a>
+</body>
+</html>
