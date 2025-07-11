@@ -63,9 +63,9 @@ src
 ```
 
 ## 🔐 Security
--**・Spring Security-based authentication**
--**・Passwords encrypted using BCrypt**
--**・CSRF protection enabled**
+**・** Spring Security-based authentication
+**・** Passwords encrypted using BCrypt
+**・** CSRF protection enabled
 
 ## 🧠 Notes
 This application was created as a portfolio project to demonstrate full-stack development using Spring Boot.
