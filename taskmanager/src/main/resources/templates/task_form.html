@@ -1,37 +1,41 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
+    <meta charset="UTF-8">
     <title>Create Task</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
-<h1>Create New Task</h1>
-<form th:action="@{/tasks}" th:object="${task}" method="post">
-    <label>Title:</label>
-    <input type="text" th:field="*{title}" /><br/>
+<div class="container">
+    <h2>Create New Task</h2>
+    <form th:action="@{/tasks}" th:object="${task}" method="post">
+        <label for="title">Title:</label>
+        <input id="title" type="text" th:field="*{title}" />
 
-    <label>Description:</label>
-    <textarea th:field="*{description}"></textarea><br/>
+        <label for="description">Description:</label>
+        <textarea id="description" th:field="*{description}"></textarea>
 
-    <label>Due Date:</label>
-    <input type="date" th:field="*{dueDate}" /><br/>
+        <label for="dueDate">Due Date:</label>
+        <input id="dueDate" type="date" th:field="*{dueDate}" />
 
-    <label>Status:</label>
-    <select th:field="*{status}">
-        <option th:value="PENDING">Pending</option>
-        <option th:value="IN_PROGRESS">In Progress</option>
-        <option th:value="COMPLETED">Completed</option>
-    </select><br/>
+        <label for="status">Status:</label>
+        <select id="status" th:field="*{status}">
+            <option th:value="PENDING">Pending</option>
+            <option th:value="IN_PROGRESS">In Progress</option>
+            <option th:value="COMPLETED">Completed</option>
+        </select>
 
-    <label>Priority:</label>
-    <select th:field="*{priority}">
-        <option th:value="LOW">Low</option>
-        <option th:value="MEDIUM">Medium</option>
-        <option th:value="HIGH">High</option>
-    </select><br/>
+        <label for="priority">Priority:</label>
+        <select id="priority" th:field="*{priority}">
+            <option th:value="LOW">Low</option>
+            <option th:value="MEDIUM">Medium</option>
+            <option th:value="HIGH">High</option>
+        </select>
 
-    <button type="submit">Save</button>
-</form>
+        <button type="submit">Save</button>
+    </form>
 
-<a th:href="@{/tasks}">Back to List</a>
+    <a class="register-link" th:href="@{/tasks}">Back to List</a>
+</div>
 </body>
 </html>

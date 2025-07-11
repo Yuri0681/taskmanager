@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head><title>Login</title></head>
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            document.querySelector('input[name="username"]').focus();
+        });
+    </script>
+</head>
 <body>
 <h2>Login</h2>
 <form th:action="@{/login}" method="post">

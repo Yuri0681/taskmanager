@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head><title>Register</title></head>
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            document.querySelector('input[name="username"]').focus();
+        });
+    </script>
+</head>
 <body>
 <h2>Register</h2>
 <form th:action="@{/register}" th:object="${user}" method="post">
