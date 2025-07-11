@@ -70,3 +70,6 @@ src
 ## 🧠 Notes
 This application was created as a portfolio project to demonstrate full-stack development using Spring Boot.
 AI tools were used to assist in development, but all code was written with understanding and intent.
+
+## 📄 License
+This project is licensed under the MIT License.
